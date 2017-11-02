@@ -15,7 +15,7 @@
     function kk(){
     	
     	var res = idNum.value.split("");
-
+	if (res.length==10){
     	var birthYNum = Number('19'+res[0]+res[1]);
     	var birthY = birthYNum - 1;
     	var day = Number(res[2]+res[3]+res[4]);
@@ -30,6 +30,9 @@
     	d = dayPredict(day, birthY);
     	//alert(d);
         alert('idNumber '+idNum.value+' BirthDay '+d+'Gender '+gender);
+	}else{
+		alert("Error");
+	}
     }
 </script>
 
