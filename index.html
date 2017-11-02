@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<h2>Details Revealer</h2>
+<script type="text/javascript">
+    var idNum;
+    function onload() { 
+        idNum = document.getElementById('idNum');
+    }
+
+    function dayPredict(day, birthY){
+    	var d = new Date("December 30, "+birthY+" 00:00:00");
+		d.setDate(d.getDate() + day);
+		return d;
+    }
+    function kk(){
+    	
+    	var res = idNum.value.split("");
+
+    	var birthYNum = Number('19'+res[0]+res[1]);
+    	var birthY = birthYNum - 1;
+    	var day = Number(res[2]+res[3]+res[4]);
+    	if(day >= 500){
+    		day = day - 500;
+    		gender = 'female'
+    	}else{
+    		gender = 'male'
+    	}
+    	//tell the gender
+
+    	d = dayPredict(day, birthY);
+    	//alert(d);
+        alert('idNumber '+idNum.value+' BirthDay '+d+'Gender '+gender);
+    }
+</script>
+
+<body onload="onload();">
+    <input type="text" name="enter" class="enter" value="" id="idNum"/>
+    <input type="button" value="click" onclick="kk();"/>
+</body>
+</html> 
